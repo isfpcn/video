@@ -20,8 +20,8 @@ class WechatController extends Controller
         });
         Log::info('return  response.');
         //Log::debug('yaoqingsong:',$wechat->server->getMessage());*/
-        echo 111;
-        //return $wechat->server->serve();
+        //echo 111;
+        return $wechat->server->serve();
     }
 }
 
