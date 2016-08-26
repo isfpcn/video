@@ -14,14 +14,14 @@ class WechatController extends Controller
     public function serve()
     {
         $wechat = app('wechat');
-        Log::info('request arrived.');
+        /*Log::info('request arrived.');
         $wechat->server->setMessageHandler(function($message){
             return '您好 isfp.cn';
         });
         Log::info('return  response.');
-        //Log::debug('yaoqingsong:',$wechat->server->getMessage());
-
-        return $wechat->server->serve();
+        //Log::debug('yaoqingsong:',$wechat->server->getMessage());*/
+        echo 111;
+        //return $wechat->server->serve();
     }
 }
 
