@@ -21,6 +21,7 @@ class WechatController extends Controller
                     # 事件消息...
                     break;
                 case 'text':
+                    Log::DEBUG('yaoqingsong',$message);
                     return 'yaoqingsong';
                     break;
                 case 'image':
@@ -45,8 +46,9 @@ class WechatController extends Controller
             }
         });
 
-        Log::debug('yaoqingsong:',$wechat->server->getMessage());
+        //Log::debug('yaoqingsong:',$wechat->server->getMessage());
 
-        return $wechat->server->serve();
+        //return $wechat->server->serve();
     }
 }
+
