@@ -16,10 +16,36 @@ class WechatController extends Controller
         $wechat = app('wechat');
 
         $wechat->server->setMessageHandler(function($message){
-            return "欢迎关注 姚青松！";
+            switch ($message->MsgType) {
+                case 'event':
+                    # 事件消息...
+                    break;
+                case 'text':
+                    return 'yaoqingsong';
+                    break;
+                case 'image':
+                    # 图片消息...
+                    break;
+                case 'voice':
+                    # 语音消息...
+                    break;
+                case 'video':
+                    # 视频消息...
+                    break;
+                case 'location':
+                    # 坐标消息...
+                    break;
+                case 'link':
+                    # 链接消息...
+                    break;
+                // ... 其它消息
+                default:
+                    # code...
+                    break;
+            }
         });
 
-        Log::DEBUG('yaoqingsong:',$wechat->server->getMessage());
+        Log::debug('yaoqingsong:',$wechat->server->getMessage());
 
         return $wechat->server->serve();
     }
